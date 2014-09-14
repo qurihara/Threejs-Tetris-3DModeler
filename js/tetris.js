@@ -55,8 +55,8 @@ Tetris.init = function () {
         width:360,
         height:360,
         depth:1200,
-        splitX:6,
-        splitY:6,
+        splitX:10,
+        splitY:10,
         splitZ:20
     };
     Tetris.boundingBoxConfig = boundingBoxConfig;
@@ -154,6 +154,40 @@ Tetris.addPoints = function (n) {
     Tetris.sounds["score"].play();
 };
 
+Tetris.addCubeStl = function(x,y,z){
+    return x + "," + y + "," + z + "\n";
+};
+
+Tetris.print3d = function(){    
+    //alert(Tetris.Board.fields.length + "," + Tetris.Board.fields[0].length + "," + Tetris.Board.fields[0][0] );
+    var str = "solid cube-ascii\n";
+    for (var x = 0; x < Tetris.Board.fields.length; x++) {
+        for (var y = 0; y < Tetris.Board.fields[x].length; y++) {
+            for (var z = 0; z < Tetris.Board.fields[x][y].length; z++) {
+                if (Tetris.Board.fields[x][y][z] == Tetris.Board.FIELD.PETRIFIED){
+                    str += Tetris.addCubeStl(x,y,z);
+                }
+            }
+        }
+    }
+    str += "endsolid\n";
+    setBlobUrl("download", str);    
+    alert("3D model exported.");    
+};
+
+setBlobUrl = function(id,content){
+    if (window.File) {
+//      window.alert("File APIが実装されてます。");
+    } else {
+      window.alert("本ブラウザではFile APIが使えません");
+    }
+
+    var blob = new Blob([ content ], { "type" : "application/x-msdownload" });
+     window.URL = window.URL || window.webkitURL;
+    $("#" + id).attr("href", window.URL.createObjectURL(blob));
+    $("#" + id).attr("download", "model.stl.txt");
+};
+
 window.addEventListener("load", Tetris.init);
 
 window.addEventListener('keydown', function (event) {
@@ -161,7 +195,9 @@ window.addEventListener('keydown', function (event) {
 
     switch (key) {
         //case
-
+        case 27: // esc
+            Tetris.print3d();
+            break;
         case 38: // up (arrow)
             Tetris.Block.move(0, 1, 0);
             break;

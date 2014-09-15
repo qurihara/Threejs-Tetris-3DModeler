@@ -154,8 +154,20 @@ Tetris.addPoints = function (n) {
     Tetris.sounds["score"].play();
 };
 
+var offset = 10;
 Tetris.addCubeStl = function(x,y,z){
-    return x + "," + y + "," + z + "\n";
+    var st = "";    
+    var lines = cubeStl.split("\n");
+    for(var i=0;i<lines.length;i++){
+//        if (lines[i].length == 0) continue;
+        if (lines[i].indexOf("vertex")>-1){
+            var eles = lines[i].split(' ');
+            st += "vertex " + String(parseFloat(eles[1])+x*offset) + " " + String(parseFloat(eles[2])+y*offset) + " " + String(parseFloat(eles[3])+z*offset) + "\n";
+        }else{
+            st += lines[i] + "\n";
+        }
+    }
+    return st;
 };
 
 Tetris.print3d = function(){    
@@ -185,8 +197,94 @@ setBlobUrl = function(id,content){
     var blob = new Blob([ content ], { "type" : "application/x-msdownload" });
      window.URL = window.URL || window.webkitURL;
     $("#" + id).attr("href", window.URL.createObjectURL(blob));
-    $("#" + id).attr("download", "model.stl.txt");
+    $("#" + id).attr("download", "model.stl");
 };
+
+//ヒアドキュメント
+var cubeStl = (function () {/*facet normal 0 0 1
+outer loop
+vertex 0 0 10
+vertex 10 0 10
+vertex 0 10 10
+endloop
+endfacet
+facet normal 0 0 1
+outer loop
+vertex 10 10 10
+vertex 0 10 10
+vertex 10 0 10
+endloop
+endfacet
+facet normal 1 0 0
+outer loop
+vertex 10 0 10
+vertex 10 0 0
+vertex 10 10 10
+endloop
+endfacet
+facet normal 1 0 0
+outer loop
+vertex 10 10 0
+vertex 10 10 10
+vertex 10 0 0
+endloop
+endfacet
+facet normal 0 0 -1
+outer loop
+vertex 10 0 0
+vertex 0 0 0
+vertex 10 10 0
+endloop
+endfacet
+facet normal 0 0 -1
+outer loop
+vertex 0 10 0
+vertex 10 10 0
+vertex 0 0 0
+endloop
+endfacet
+facet normal -1 0 0
+outer loop
+vertex 0 0 0
+vertex 0 0 10
+vertex 0 10 0
+endloop
+endfacet
+facet normal -1 0 0
+outer loop
+vertex 0 10 10
+vertex 0 10 0
+vertex 0 0 10
+endloop
+endfacet
+facet normal 0 1 0
+outer loop
+vertex 0 10 10
+vertex 10 10 10
+vertex 0 10 0
+endloop
+endfacet
+facet normal 0 1 0
+outer loop
+vertex 10 10 0
+vertex 0 10 0
+vertex 10 10 10
+endloop
+endfacet
+facet normal 0 -1 0
+outer loop
+vertex 10 0 10
+vertex 0 0 10
+vertex 10 0 0
+endloop
+endfacet
+facet normal 0 -1 0
+outer loop
+vertex 0 0 0
+vertex 10 0 0
+vertex 0 0 10
+endloop
+endfacet*/}).toString().match(/[^]*\/\*([^]*)\*\/\}$/)[1];
 
 window.addEventListener("load", Tetris.init);
 

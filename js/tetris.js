@@ -189,9 +189,9 @@ Tetris.print3d = function(){
 
 exportStl = function(id,content){
     if (window.File) {
-//      window.alert("File APIが実装されてます。");
+//      window.alert("File API is available.");
     } else {
-      window.alert("本ブラウザではFile APIが使えません");
+      window.alert("File API is not available.");
     }
 
     var blob = new Blob([ content ], { "type" : "application/x-msdownload" });

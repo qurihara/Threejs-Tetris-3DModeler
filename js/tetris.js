@@ -49,7 +49,7 @@ Tetris.init = function () {
 
     // attach the render-supplied DOM element
     document.body.appendChild(Tetris.renderer.domElement);
-
+    
     // configuration object
     var boundingBoxConfig = {
         width:360,
@@ -95,7 +95,7 @@ Tetris.start = function () {
     Tetris.animate();
 };
 
-Tetris.gameStepTime = 1000;
+Tetris.gameStepTime = 1000;//1000;
 
 Tetris.frameTime = 0; // ms
 Tetris.cumulatedFrameTime = 0; // ms
@@ -185,6 +185,22 @@ Tetris.print3d = function(){
     str += "endsolid\n";
     exportStl("download", str);    
     alert("3D model exported. Add .stl to its filename.");    
+};
+
+Tetris.easyMode = function(){
+    alert("easy mode");    
+    Tetris.Block.shapes = Tetris.Block.shapes_easy;
+    Tetris.gameStepTime = 5000;
+};
+Tetris.nomalMode = function(){
+    alert("nomal mode");    
+    Tetris.Block.shapes = Tetris.Block.shapes_nomal;
+    Tetris.gameStepTime = 1000;
+};
+Tetris.hardMode = function(){
+    alert("hard mode");    
+    Tetris.Block.shapes = Tetris.Block.shapes_nomal;
+    Tetris.gameStepTime = 250;
 };
 
 exportStl = function(id,content){
@@ -297,6 +313,19 @@ window.addEventListener('keydown', function (event) {
         case 27: // esc
             Tetris.print3d();
             break;
+        case 49: // 1
+            Tetris.easyMode();
+            break;
+        case 50: // 2
+            Tetris.nomalMode();        
+            break;
+        case 51: // 3
+            Tetris.hardMode();        
+            break;
+        case 67: // c
+            Tetris.Block.cancel();        
+            break;
+            
         case 38: // up (arrow)
             Tetris.Block.move(0, 1, 0);
             break;

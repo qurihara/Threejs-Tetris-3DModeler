@@ -14,7 +14,15 @@ Tetris.Utils.roundVector = function(v) {
 
 Tetris.Block = {};
 
-Tetris.Block.shapes = [
+Tetris.Block.shapes_easy = [
+    [
+        {x:0, y:0, z:0},
+        {x:0, y:1, z:0},
+        {x:0, y:2, z:0},
+    ],
+];
+
+Tetris.Block.shapes_nomal = [
     [
         {x:0, y:0, z:0},
         {x:1, y:0, z:0},
@@ -45,6 +53,8 @@ Tetris.Block.shapes = [
         {x:1, y:2, z:0}
     ]
 ];
+
+Tetris.Block.shapes = Tetris.Block.shapes_nomal;
 
 Tetris.Block.position = {};
 
@@ -149,6 +159,11 @@ Tetris.Block.petrify = function () {
 
 Tetris.Block.hitBottom = function () {
     Tetris.Block.petrify();
+    Tetris.scene.removeObject(Tetris.Block.mesh);
+    Tetris.Block.generate();
+};
+
+Tetris.Block.cancel = function (){
     Tetris.scene.removeObject(Tetris.Block.mesh);
     Tetris.Block.generate();
 };

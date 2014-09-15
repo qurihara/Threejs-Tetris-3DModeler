@@ -74,7 +74,7 @@ Tetris.init = function () {
 
     Tetris.stats = new Stats();
     Tetris.stats.domElement.style.position = 'absolute';
-    Tetris.stats.domElement.style.top = '10px';
+    Tetris.stats.domElement.style.top = '100px';
     Tetris.stats.domElement.style.left = '10px';
     document.body.appendChild(Tetris.stats.domElement);
 
@@ -183,11 +183,11 @@ Tetris.print3d = function(){
         }
     }
     str += "endsolid\n";
-    setBlobUrl("download", str);    
-    alert("3D model exported.");    
+    exportStl("download", str);    
+    alert("3D model exported. Add .stl to its filename.");    
 };
 
-setBlobUrl = function(id,content){
+exportStl = function(id,content){
     if (window.File) {
 //      window.alert("File APIが実装されてます。");
     } else {
@@ -196,8 +196,10 @@ setBlobUrl = function(id,content){
 
     var blob = new Blob([ content ], { "type" : "application/x-msdownload" });
      window.URL = window.URL || window.webkitURL;
-    $("#" + id).attr("href", window.URL.createObjectURL(blob));
+     var url = window.URL.createObjectURL(blob);
+    $("#" + id).attr("href", url);
     $("#" + id).attr("download", "model.stl");
+    window.open(url,"_blank");
 };
 
 //ヒアドキュメント

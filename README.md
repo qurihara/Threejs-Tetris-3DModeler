@@ -1,4 +1,4 @@
-You can edit 3D models for 3D printer through playing 3D Tetris!
+You can create 3D models for 3D printer through playing 3D Tetris!
 
 At first, just try this app from the following link:
 https://dl.dropboxusercontent.com/u/7988399/Threejs-Tetris-3DModeler/index.html

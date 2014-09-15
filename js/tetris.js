@@ -41,7 +41,7 @@ Tetris.init = function () {
     Tetris.scene = new THREE.Scene();
 
     // the camera starts at 0,0,0 so pull it back
-    Tetris.camera.position.z = 600;
+    Tetris.camera.position.z = 200;//600;
     Tetris.scene.add(Tetris.camera);
 
     // start the renderer
@@ -55,9 +55,9 @@ Tetris.init = function () {
         width:360,
         height:360,
         depth:1200,
-        splitX:6,
-        splitY:6,
-        splitZ:20
+        splitX:12,//6,
+        splitY:12,//6,
+        splitZ:40//20
     };
     Tetris.boundingBoxConfig = boundingBoxConfig;
     Tetris.blockSize = boundingBoxConfig.width / boundingBoxConfig.splitX;
@@ -74,7 +74,7 @@ Tetris.init = function () {
 
     Tetris.stats = new Stats();
     Tetris.stats.domElement.style.position = 'absolute';
-    Tetris.stats.domElement.style.top = '100px';
+    Tetris.stats.domElement.style.top = '50px';
     Tetris.stats.domElement.style.left = '10px';
     document.body.appendChild(Tetris.stats.domElement);
 
@@ -202,7 +202,6 @@ exportStl = function(id,content){
     window.open(url,"_blank");
 };
 
-//ヒアドキュメント
 var cubeStl = (function () {/*facet normal 0 0 1
 outer loop
 vertex 0 0 10

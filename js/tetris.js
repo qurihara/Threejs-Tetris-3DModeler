@@ -55,8 +55,8 @@ Tetris.init = function () {
         width:360,
         height:360,
         depth:1200,
-        splitX:10,
-        splitY:10,
+        splitX:6,
+        splitY:6,
         splitZ:20
     };
     Tetris.boundingBoxConfig = boundingBoxConfig;

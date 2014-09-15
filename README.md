@@ -1,4 +1,4 @@
-You can create 3D models for your 3D printer from scratch through playing 3D Tetris!
+### You can create 3D models for your 3D printer from scratch through playing 3D Tetris! ###
 
 At first, just try this app at the following link:
 https://dl.dropboxusercontent.com/u/7988399/Threejs-Tetris-3DModeler/index.html
@@ -7,7 +7,7 @@ https://dl.dropboxusercontent.com/u/7988399/Threejs-Tetris-3DModeler/index.html
 * .STL export function is available with pressing esc key.
 * You may need to repair .STL with https://modelrepair.azurewebsites.net/index.php
 
-## The following is the original README.md from https://github.com/fridek/Threejs-Tetris ##
+### The following is the original README.md from https://github.com/fridek/Threejs-Tetris ###
 
 If you'd like to have original soundtrack in game go to http://www.youtube-mp3.org/ (or similar) and use link http://www.youtube.com/watch?v=NmCCQxVBfyM
 

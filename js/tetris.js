@@ -218,6 +218,12 @@ exportStl = function(id,content){
     window.open(url,"_blank");
 };
 
+$(function() {
+    $("#export").click(function(){
+        Tetris.print3d();
+    });
+});
+
 var cubeStl = (function () {/*facet normal 0 0 1
 outer loop
 vertex 0 0 10

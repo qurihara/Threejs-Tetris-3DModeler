@@ -8,9 +8,12 @@ https://dl.dropboxusercontent.com/u/7988399/Threejs-Tetris-3DModeler/index.html
 * You might need to repair .STL with https://modelrepair.azurewebsites.net/index.php
 
 ### Secret features ###
-* Push space key to speed up the fall of each block.
-* "1","2","3" keys for changing modes. Easy, normal, and hard mode are available.
+* Press space key to speed up the fall of each block.
 * Press "c" key for cancel the current block.
+* Press "1","2", and "3" keys to change modes. Easy, normal, and hard mode are available.
+ * Easy mode: slow speed, and only I-shaped blocks appear.
+ * Normal mode: medium speed.
+ * Hard mode: high speed. 
 
 ### The following is the original README.md from https://github.com/fridek/Threejs-Tetris ###
 

@@ -18,7 +18,10 @@ Tetris.init = function () {
     Tetris.sounds["collision"] = document.getElementById("audio_collision");  
     Tetris.sounds["move"] = document.getElementById("audio_move");  
     Tetris.sounds["gameover"] = document.getElementById("audio_gameover");  
+    Tetris.sounds["finish"] = document.getElementById("audio_finish");  
     Tetris.sounds["score"] = document.getElementById("audio_score");  
+    Tetris.sounds["start"] = document.getElementById("audio_start");  
+    Tetris.sounds["export"] = document.getElementById("audio_export");  
 
     Tetris.sounds["theme"].play();
     // set the scene size
@@ -90,6 +93,7 @@ Tetris.start = function () {
     Tetris.pointsDOM.style.display = "block";
 	
     Tetris.sounds["theme"].pause();
+    Tetris.sounds["start"].play();
 	
     Tetris.Block.generate();
     Tetris.animate();
@@ -184,6 +188,7 @@ Tetris.print3d = function(){
     }
     str += "endsolid\n";
     exportStl("download", str);    
+    Tetris.sounds["export"].play();
     alert("3D model exported. Add .stl to its filename.");    
 };
 

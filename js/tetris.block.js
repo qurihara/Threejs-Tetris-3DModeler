@@ -89,6 +89,7 @@ Tetris.Block.generate = function () {
         Tetris.gameOver = true;
         Tetris.pointsDOM.innerHTML = "GAME OVER";
         Tetris.sounds["gameover"].play();
+        Tetris.sounds["finish"].play();
         Cufon.replace('#points');
     }
 

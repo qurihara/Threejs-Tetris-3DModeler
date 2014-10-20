@@ -8,6 +8,7 @@ http://t3dm.azurewebsites.net/
 * Rotation: AD/SW/QE
 * Export model (.stl format): ESC key
 * Speed up the fall of each block: SPACE key
+* Retry: F5 key
 
 ### Secret features ###
 * Press "c" key for cancel the current block.

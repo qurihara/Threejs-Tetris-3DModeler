@@ -17,5 +17,5 @@ http://t3dm.azurewebsites.net/
  * Normal mode: medium speed.
  * Hard mode: high speed. 
 
-* I tested this app with Chrome on windows, Chrome and FireFox on Mac. It doesn't work with Safari on Mac, any browsers on Smartphones. (WHY?)
+* I tested this app with Chrome and FireFox on Windows and Mac. It doesn't work with Safari on Mac, any browsers on Smartphones. (Maybe because of something related with WebGL)
 * You might need to repair .STL with https://modelrepair.azurewebsites.net/index.php

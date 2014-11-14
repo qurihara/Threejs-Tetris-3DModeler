@@ -195,17 +195,17 @@ Tetris.print3d = function(){
 Tetris.easyMode = function(){
     alert("easy mode");    
     Tetris.Block.shapes = Tetris.Block.shapes_easy;
-    Tetris.gameStepTime = 5000;
+    Tetris.gameStepTime = 8000;
 };
 Tetris.nomalMode = function(){
     alert("nomal mode");    
     Tetris.Block.shapes = Tetris.Block.shapes_nomal;
-    Tetris.gameStepTime = 1000;
+    Tetris.gameStepTime = 2000;
 };
 Tetris.hardMode = function(){
     alert("hard mode");    
     Tetris.Block.shapes = Tetris.Block.shapes_nomal;
-    Tetris.gameStepTime = 250;
+    Tetris.gameStepTime = 500;
 };
 
 exportStl = function(id,content){

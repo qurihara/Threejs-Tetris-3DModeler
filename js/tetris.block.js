@@ -17,6 +17,11 @@ Tetris.Block = {};
 Tetris.Block.shapes_easy = [
     [
         {x:0, y:0, z:0},
+//        {x:0, y:1, z:0},
+//        {x:0, y:2, z:0},
+    ],
+    [
+        {x:0, y:0, z:0},
         {x:0, y:1, z:0},
 //        {x:0, y:2, z:0},
     ],

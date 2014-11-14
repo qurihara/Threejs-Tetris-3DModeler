@@ -99,7 +99,7 @@ Tetris.start = function () {
     Tetris.animate();
 };
 
-Tetris.gameStepTime = 1000;//1000;
+Tetris.gameStepTime = 2000;//1000;
 
 Tetris.frameTime = 0; // ms
 Tetris.cumulatedFrameTime = 0; // ms

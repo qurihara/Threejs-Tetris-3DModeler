@@ -13,7 +13,7 @@ http://t3dm.azurewebsites.net/
 ### Secret features ###
 * Press "c" key for cancel the current block.
 * Press "1","2", and "3" keys to change modes. Easy, normal, and hard mode are available.
- * Easy mode: slow speed, and only I-shaped blocks appear.
+ * Easy mode: slow speed, and easy blocks only appear.
  * Normal mode: medium speed.
  * Hard mode: high speed. 
 

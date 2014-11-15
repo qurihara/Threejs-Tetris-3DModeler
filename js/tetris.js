@@ -95,6 +95,8 @@ Tetris.start = function () {
     Tetris.sounds["theme"].pause();
     Tetris.sounds["start"].play();
 	
+    Tetris.menu = false;
+    Tetris._lastFrameTime = Date.now(); // timestamp
     Tetris.Block.generate();
     Tetris.animate();
 };
@@ -103,9 +105,11 @@ Tetris.gameStepTime = 2000;//1000;
 
 Tetris.frameTime = 0; // ms
 Tetris.cumulatedFrameTime = 0; // ms
-Tetris._lastFrameTime = Date.now(); // timestamp
+//Tetris._lastFrameTime = Date.now(); // timestamp
 
 Tetris.gameOver = false;
+Tetris.menu = true;
+
 
 Tetris.animate = function () {
     var time = Date.now();
@@ -350,6 +354,9 @@ window.addEventListener('keydown', function (event) {
             Tetris.Block.move(1, 0, 0);
             break;
         case 32: // space
+            if (Tetris.menu){
+                Tetris.start();
+            }
             Tetris.Block.move(0, 0, -1);
             break;
 

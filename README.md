@@ -6,6 +6,9 @@ http://goo.gl/InvrFS
 Demo video clip:
 http://youtu.be/eXsHbv5GmjA
 
+Project web site:
+https://sites.google.com/site/qurihara/top-english/t3dm
+
 ### How to play ###
 * Movement: arrows
 * Rotation: AD/SW/QE

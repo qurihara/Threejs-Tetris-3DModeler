@@ -192,8 +192,6 @@ Tetris.print3d = function(){
     }
     str += "endsolid\n";
     exportStl("download", str);    
-    Tetris.sounds["export"].play();
-    alert("3D model exported. Add .stl to its filename.");    
 };
 
 Tetris.easyMode = function(){
@@ -224,7 +222,14 @@ exportStl = function(id,content){
      var url = window.URL.createObjectURL(blob);
     $("#" + id).attr("href", url);
     $("#" + id).attr("download", "model.stl");
-    window.open(url,"_blank");
+ 
+    Tetris.sounds["export"].play();
+    if (window.navigator.msSaveBlob) { 
+        window.navigator.msSaveBlob(blob, 'model.stl'); 
+    } else { 
+        window.open(url,"_blank");
+        alert("3D model exported. Add .stl to its filename.");    
+    } 
 };
 
 $(function() {

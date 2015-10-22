@@ -1,7 +1,7 @@
 ### You can create 3D models for your 3D printer from scratch through playing 3D Tetris in your web browser! ###
 
 First of all, just try this app:
-http://goo.gl/InvrFS
+http://goo.gl/ExrnGP
 
 Demo video clip:
 http://youtu.be/eXsHbv5GmjA
